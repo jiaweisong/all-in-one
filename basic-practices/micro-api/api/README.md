@@ -1,8 +1,8 @@
 # API
 
-本示例介绍使用**Micro API**（以下简称**API**）有的请求处理类型**api**.
+本示例介绍使用**Micro API**（以下简称**API**）中的请求处理类型**api**，这里后面的api意思不是Micro API工具，而是指具体的对外的API接口服务。
 
-我们专门定义api请求响应的proto文件，[api.Request/Response](https://github.com/micro/go-api/blob/master/proto/api.proto)，
+另外，我们专门定义有api请求响应的proto文件，[api.Request/Response](https://github.com/micro/go-api/blob/master/proto/api.proto)，
 
 要使用**api**类型的**API**服务，我们得使用这些proto原型。
 
@@ -23,7 +23,7 @@ go run api.go
 
 ## 调用服务
 
-通过URL**/example/call**，就会调用**go.micro.api.example**服务的**Example.Call**接口
+通过URL **/example/call**，就会调用**go.micro.api.example**服务的**Example.Call**接口
 
 ```
 curl "http://localhost:8080/example/call?name=john"
@@ -49,7 +49,7 @@ micro api --handler=api --namespace=com.foobar.api
 MICRO_API_NAMESPACE=com.foobar.api micro api --handler=api
 ```
 
-切记，如果启动时指定命名空间，则代码中的服务名也要注意同步修改前缀
+切记，如果启动时指定命名空间，则代码中的服务名也要注意同步修改前缀，即把**micro.Name**的参数改成对应的命令空间前缀，以便**API**通过解析路由找到它。
 
 ```
 service := micro.NewService(
