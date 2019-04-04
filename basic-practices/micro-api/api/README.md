@@ -6,10 +6,6 @@
 
 要使用**api**类型的**API**服务，我们得使用这些proto原型。
 
-
-The micro api request handler gives you full control over the http request and response while still leveraging RPC and 
-any transport plugins that use other protocols beyond http in your stack such as grpc, nats, kafka.
-
 ## 使用方式
 
 运行**API**网关，我们传入api指令运行：
@@ -33,26 +29,27 @@ go run api.go
 curl "http://localhost:8080/example/call?name=john"
 ```
 
-Make a POST request to /example/foo/bar which will call go.micro.api.example Foo.Bar
+我们也加了POST路由 **/example/foo/bar**，可以通过它调用**go.micro.api.example**的**Foo.Bar**
 
 ```
-curl -H 'Content-Type: application/json' -d '{}' http://localhost:8080/example/foo/bar
+curl -H 'Content-Type: application/json' -d '{data:123}' http://localhost:8080/example/foo/bar
 ```
 
 ## 设置命名空间
 
-Run the micro API with custom namespace
+可以通过`--namespace`指定服务命令空间
 
 ```
 micro api --handler=api --namespace=com.foobar.api
 ```
 
-or
+或者通过环境变量的方式
+
 ```
 MICRO_API_NAMESPACE=com.foobar.api micro api --handler=api
 ```
 
-Set service name with the namespace
+切记，如果启动时指定命名空间，则代码中的服务名也要注意同步修改前缀
 
 ```
 service := micro.NewService(
