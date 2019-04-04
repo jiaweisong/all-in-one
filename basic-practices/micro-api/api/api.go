@@ -29,6 +29,11 @@ func (e *Example) Call(ctx context.Context, req *api.Request, rsp *api.Response)
 		return errors.BadRequest("go.micro.api.example", "参数不正确")
 	}
 
+	// 打印请求头
+	for k, v := range req.Header {
+		log.Print("请求头信息，", k, " : ", v)
+	}
+
 	rsp.StatusCode = 200
 
 	b, _ := json.Marshal(map[string]string{

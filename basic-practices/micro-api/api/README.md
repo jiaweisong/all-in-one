@@ -20,13 +20,15 @@ micro api --handler=api
 go run api.go
 ```
 
-
 ## 调用服务
 
 通过URL **/example/call**，就会调用**go.micro.api.example**服务的**Example.Call**接口
 
+请求头的数据会被传到最终调用的接口
+
 ```
-curl "http://localhost:8080/example/call?name=john"
+curl -H 'head-1: I am a header' "http://localhost:8080/example/call?name=john"
+
 ```
 
 我们也加了POST路由 **/example/foo/bar**，可以通过它调用**go.micro.api.example**服务的**Foo.Bar**接口
