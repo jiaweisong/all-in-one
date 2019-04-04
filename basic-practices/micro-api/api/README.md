@@ -31,7 +31,7 @@ curl -H 'head-1: I am a header' "http://localhost:8080/example/call?name=john"
 
 ```
 
-我们也加了POST路由 **/example/foo/bar**，可以通过它调用**go.micro.api.example**服务的**Foo.Bar**接口
+而POST路由 **/example/foo/bar**，可以通过它调用**go.micro.api.example**服务的**Foo.Bar**接口
 
 ```
 curl -H 'Content-Type: application/json' -d '{data:123}' http://localhost:8080/example/foo/bar
