@@ -1,10 +1,17 @@
 package main
 
 import (
+	"crypto/md5"
 	"encoding/json"
+	"fmt"
+	"html/template"
+	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
+	"strconv"
+	"time"
 
 	"github.com/micro/go-micro/errors"
 	"github.com/micro/go-web"
@@ -78,6 +85,49 @@ func exampleFooBar(w http.ResponseWriter, r *http.Request) {
 	w.Write(b)
 }
 
+// uploadFile 方法负责处理/example/foo/upload上传文件的路由
+func uploadFile(w http.ResponseWriter, r *http.Request) {
+
+	if r.Method == "GET" {
+		crutime := time.Now().Unix()
+		h := md5.New()
+		io.WriteString(h, strconv.FormatInt(crutime, 10))
+		token := fmt.Sprintf("%x", h.Sum(nil))
+
+		t, _ := template.New("foo").Parse(`<html>
+<head>
+       <title>Upload file</title>
+</head>
+<body>
+<form enctype="multipart/form-data" action="http://127.0.0.1:8080/example/foo/upload" method="post">
+    <input type="file" name="uploadfile" />
+    <input type="hidden" name="token" value="{{.}}"/>
+    <input type="submit" value="upload" />
+</form>
+</body>
+</html>`)
+		t.Execute(w, token)
+
+		return
+	}
+
+	r.ParseMultipartForm(32 << 20)
+	file, handler, err := r.FormFile("uploadfile")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer file.Close()
+	fmt.Fprintf(w, "%v", handler.Header)
+	f, err := os.OpenFile("./test/"+handler.Filename, os.O_WRONLY|os.O_CREATE, 0666)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer f.Close()
+	io.Copy(f, file)
+}
+
 func main() {
 	// 我们为了方便就直接使用go-web包，因为API需要从注册中心获取服务信息，而go-web包已经有注册服务的能力
 	service := web.NewService(
@@ -86,6 +136,7 @@ func main() {
 
 	service.HandleFunc("/example/call", exampleCall)
 	service.HandleFunc("/example/foo/bar", exampleFooBar)
+	service.HandleFunc("/example/foo/upload", uploadFile)
 
 	if err := service.Init(); err != nil {
 		log.Fatal(err)

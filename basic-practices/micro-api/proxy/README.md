@@ -31,3 +31,9 @@ POST请求到 **/example/foo/bar**会调用**go.micro.api.example**的 **/exampl
 ```
  curl -H 'Content-Type: application/json' -d '{"name": "micro"}' http://localhost:8080/example/foo/bar
 ```
+
+我们可以请求`http://localhost:8080/example/foo/bar`，获取上传页面，选择适当的文件上传，测试上传功能
+
+```
+ curl -H 'Content-Type: application/json' -d '{"name": "micro"}' http://localhost:8080/example/foo/bar
+```
