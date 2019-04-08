@@ -7,8 +7,9 @@
 
 ## 内容提要
 
-- [micro-api](./micro-api) 示例api的用法
-- [micro-broker](./micro-broker) 示例broker用法
+- [micro-api](./micro-api) api的用法
+- [micro-broker](./micro-broker) broker用法
+- [micro-config](./micro-broker) 配置文件如何读取
 
 
 [文档]: https://micro.mu/docs/cn/
