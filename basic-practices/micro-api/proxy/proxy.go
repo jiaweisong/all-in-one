@@ -93,8 +93,10 @@ func uploadFile(w http.ResponseWriter, r *http.Request) {
 <body>
 <form enctype="multipart/form-data" action="http://127.0.0.1:8080/example/foo/upload" method="post">
     <input type="file" name="uploadfile" />
-    <input type="text" name="path" />
-    <input type="submit" value="upload" />
+   <br />
+   保存目录： <input type="text" name="path" /> 如 /Users/shuxian/Downloads/test/
+     <br />
+    <input type="submit" name='上传' value="upload" />
 </form>
 </body>
 </html>`)
