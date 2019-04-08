@@ -20,7 +20,7 @@ micro api --handler=http
 go run proxy.go
 ```
 
-### /example/call
+### 示例一 /example/call
 
 发送请求到 **/example/call**，该请求会被**API**反向代理到**go.micro.api.example**服务的 **/example/call**路由
 
@@ -28,7 +28,7 @@ go run proxy.go
 curl "http://localhost:8080/example/call?name=micro"
 ```
 
-### /example/foo/bar
+### 示例二 /example/foo/bar
 
 POST请求到 **/example/foo/bar**会调用**go.micro.api.example**的 **/example/foo/bar**路由。
 
@@ -36,6 +36,6 @@ POST请求到 **/example/foo/bar**会调用**go.micro.api.example**的 **/exampl
  curl -H 'Content-Type: application/json' -d '{"name": "micro"}' http://localhost:8080/example/foo/bar
 ```
 
-### 文件上传
+### 示例三 文件上传 /example/foo/upload
 
 我们可以请求`http://localhost:8080/example/foo/upload`，获取上传页面，选择适当的文件上传，测试上传功能。为了方便和直观，请保存上传保存的目录存在，且上传小文件
