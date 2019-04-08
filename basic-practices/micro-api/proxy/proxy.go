@@ -1,20 +1,16 @@
 package main
 
 import (
-	"crypto/md5"
 	"encoding/json"
 	"fmt"
+	"github.com/micro/go-micro/errors"
+	"github.com/micro/go-web"
 	"html/template"
 	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
-	"strconv"
-	"time"
-
-	"github.com/micro/go-micro/errors"
-	"github.com/micro/go-web"
 )
 
 // exampleCall 方法负责处理/example/call路由
@@ -89,10 +85,6 @@ func exampleFooBar(w http.ResponseWriter, r *http.Request) {
 func uploadFile(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method == "GET" {
-		crutime := time.Now().Unix()
-		h := md5.New()
-		io.WriteString(h, strconv.FormatInt(crutime, 10))
-		token := fmt.Sprintf("%x", h.Sum(nil))
 
 		t, _ := template.New("foo").Parse(`<html>
 <head>
@@ -101,12 +93,12 @@ func uploadFile(w http.ResponseWriter, r *http.Request) {
 <body>
 <form enctype="multipart/form-data" action="http://127.0.0.1:8080/example/foo/upload" method="post">
     <input type="file" name="uploadfile" />
-    <input type="hidden" name="token" value="{{.}}"/>
+    <input type="text" name="path" />
     <input type="submit" value="upload" />
 </form>
 </body>
 </html>`)
-		t.Execute(w, token)
+		t.Execute(w, nil)
 
 		return
 	}
@@ -119,7 +111,9 @@ func uploadFile(w http.ResponseWriter, r *http.Request) {
 	}
 	defer file.Close()
 	fmt.Fprintf(w, "%v", handler.Header)
-	f, err := os.OpenFile("./test/"+handler.Filename, os.O_WRONLY|os.O_CREATE, 0666)
+
+	path := r.PostForm.Get("path")
+	f, err := os.OpenFile(path+handler.Filename, os.O_WRONLY|os.O_CREATE, 0666)
 	if err != nil {
 		fmt.Println(err)
 		return
