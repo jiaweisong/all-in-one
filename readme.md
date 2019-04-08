@@ -7,7 +7,7 @@
 
 ## Micro源码运行环境安装
 
-忽略Golang环境安装，未安装的同学可参考[Golang][golang-cn]，选择合适自己的安装包搭建Go开发环境。
+这里省略了Golang环境安装，未安装的同学可参考[Golang][golang-cn]，选择合适自己的安装包搭建Go开发环境。
 
 ### 安装micro
 
