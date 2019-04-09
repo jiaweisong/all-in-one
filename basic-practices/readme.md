@@ -12,6 +12,6 @@
 - [micro-api](./micro-api) api的用法
 - [micro-broker](./micro-broker) broker用法
 - [micro-config](./micro-broker) 配置文件如何读取
-
+- [micro-service](./micro-service) 编写Micro服务，包含service和function
 
 [文档]: https://micro.mu/docs/cn/
