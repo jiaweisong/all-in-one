@@ -12,6 +12,12 @@ Go-config高阶部分可以参考[go-config进阶][middle-micro-config]
 
 更多资料请翻阅文档[go-config][go-config]
 
+## 运行程序
+
+```bash
+go run main.go
+```
+
 [go-config]: https://micro.mu/docs/cn/go-config.html
 [middle-micro-config]: ../../middle-pratices/micro-config
 
