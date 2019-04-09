@@ -1,4 +1,4 @@
-package basic
+package main
 
 import (
 	"fmt"
@@ -55,5 +55,5 @@ func main() {
 	go pub()
 	go sub()
 
-	<-time.After(time.Second * 10)
+	<-time.After(time.Second * 1000)
 }

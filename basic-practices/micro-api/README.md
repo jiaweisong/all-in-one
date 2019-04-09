@@ -16,16 +16,19 @@ Micro风格将它们的命名空间设置为**go.micro.api.example**的样式，
 
 ## Handler处理器
 
-Micro API目前有四种处理方式，下面我们会讲到，我们可以根据需求将**API**设置成指定的类型。
+Micro API目前有5种处理方式，下面我们会讲到，我们可以根据需求将**API**设置成指定的类型。
 
 | - | 类型 | 说明
 ----|----|----
 1 | rpc | 默认值，通过RPC向go-micro应用转送请求，通常只传送请求body，头信息不封装。只接收POST请求
 2 | api | 与rpc差不多，但是会把完整的http头封装向下传送，不限制请求方法
-3 | proxy | 以反向代理的方式使用**API**，相当于把普通的web应用部署在**API**之后，让外界向调api接口一下调用web服务
-4 | meta | 元数据，通过在代码中的配置选择使用上述中的某一个处理器
+3 | http或proxy | 以反向代理的方式使用**API**，相当于把普通的web应用部署在**API**之后，让外界向调api接口一下调用web服务
+4 | web | 与http差不多，但是支持websocket
+5 | event | 代理event事件服务类型的请求
+6 | meta* | 元数据，通过在代码中的配置选择使用上述中的某一个处理器
 
 - 重点讲一下rpc和api两种类型的区别，它们的区别就在于，rpc不会把请求头信息封装传下去，而api会。
+- meta，并无此模式，只是对api或rpc模式下的扩展使用方法。
 
 ## 请求映射
 
@@ -67,10 +70,19 @@ http路径	|	后台服务	|	接口方法
 /greeter	|	go.micro.api.greeter	|	/greeter
 /greeter/:name	|	go.micro.api.greeter	|	/greeter/:name
 
+### Event类型
+
+启动**API**时传指令`--handler=event`，那么**API**便会反向代理请求到具有API命名空间的后台事件消费服务中。
+
+比如（命名空间设置为go.micro.evt）：
+
+请求路径	|	服务	|	方法
+---	|	---	|	---
+/user/login	|	go.micro.evt.user	|	侦听器对象（示例中的new(Event)）所有公共方法，且方法要有ctx和事件参数
+
 ## 示例源码
 
-本示例下有4个目录，分别对应**API**的4种handler处理器类型
-
+本示例下有6个目录，分别对应**API**的上面说的6种handler处理器类型或模式
 
 [什么是API]: https://micro.mu/docs/cn/api.html
 [API源码]: https://github.com/micro/micro/tree/master/api
