@@ -17,15 +17,15 @@ $ go get -u github.com/micro/micro
 
 ## 目录
 
-- [micro-api](./basic-practices/micro-api) api的用法
-  - [rpc-handler](./basic-practices/micro-api/rpc)
-  - [api-handler](./basic-practices/micro-api/api)
-  - [proxy-handler](./basic-practices/micro-api/proxy)
-  - [web-handler](./basic-practices/micro-api/web)
-  - [event-handler](./basic-practices/micro-api/event)
-  - [meta-handler](./basic-practices/micro-api/meta)
-- [micro-broker](./basic-practices/micro-broker) broker用法
-  - [基础](./basic-practices/micro-broker/basic) 
+- [micro-api](./basic-practices/micro-api) 
+  - [rpc-handler](./basic-practices/micro-api/rpc) rpc模式
+  - [api-handler](./basic-practices/micro-api/api) api模式
+  - [proxy-handler](./basic-practices/micro-api/proxy) proxy（http）模式
+  - [web-handler](./basic-practices/micro-api/web) web（websocket）模式
+  - [event-handler](./basic-practices/micro-api/event) event模式
+  - [meta-handler](./basic-practices/micro-api/meta) meta模式
+- [micro-broker](./basic-practices/micro-broker) 
+  - [发布与订阅](./basic-practices/micro-broker/basic) 
 - [micro-service](./basic-practices/micro-service) 编写Micro服务，包含service和function
   - [function](./basic-practices/micro-service/function)
   - [service](./basic-practices/micro-service/service)
@@ -37,9 +37,3 @@ $ go get -u github.com/micro/micro
 
 [golang-cn]: https://golang.google.cn/
 [micro-tutorials]: https://github.com/micro-in-cn/micro-tutorials
-
-## 请我喝杯茶
-
-搬砖不易，是时候喂我喝茶了[->](https://github.com/printfcoder/nocode#user-content-pay)
-
-
