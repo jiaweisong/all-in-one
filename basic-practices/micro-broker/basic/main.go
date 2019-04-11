@@ -55,5 +55,5 @@ func main() {
 	go pub()
 	go sub()
 
-	<-time.After(time.Second * 1000)
+	<-time.After(time.Second * 10)
 }
