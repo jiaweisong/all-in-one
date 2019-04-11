@@ -29,6 +29,7 @@ $ go get -u github.com/micro/micro
 - [micro-service](./basic-practices/micro-service) 编写Micro服务，包含service和function
   - [function](./basic-practices/micro-service/function)
   - [service](./basic-practices/micro-service/service)
+  - [自定义broker](./middle-practices/micro-service/custom-broker)
 - [micro-cli](./middle-practices/micro-cli) 如何使用命令行接口
   - [flag](./middle-practices/micro-cli/flags) 如何使用flag
 - [micro-config](./middle-practices/micro-config) 如何从配置中心读取配置
