@@ -17,24 +17,26 @@ $ go get -u github.com/micro/micro
 
 ## 目录
 
+*代表是初阶，**代表中阶，***代表高阶
+
 - [micro-api](./basic-practices/micro-api) 
-  - [rpc-handler](./basic-practices/micro-api/rpc) rpc模式
-  - [api-handler](./basic-practices/micro-api/api) api模式
-  - [proxy-handler](./basic-practices/micro-api/proxy) proxy（http）模式
-  - [web-handler](./basic-practices/micro-api/web) web（websocket）模式
-  - [event-handler](./basic-practices/micro-api/event) event模式
-  - [meta-handler](./basic-practices/micro-api/meta) meta模式
+  - [*rpc-handler](./basic-practices/micro-api/rpc) rpc模式
+  - [*api-handler](./basic-practices/micro-api/api) api模式
+  - [*proxy-handler](./basic-practices/micro-api/proxy) proxy（http）模式
+  - [*web-handler](./basic-practices/micro-api/web) web（websocket）模式
+  - [*event-handler](./basic-practices/micro-api/event) event模式
+  - [*meta-handler](./basic-practices/micro-api/meta) meta模式
 - [micro-broker](./basic-practices/micro-broker) 
-  - [发布与订阅](./basic-practices/micro-broker/basic) 
+  - [*发布与订阅](./basic-practices/micro-broker/basic) 
 - [micro-service](./basic-practices/micro-service) 编写Micro服务，包含service和function
-  - [function](./basic-practices/micro-service/function)
-  - [service](./basic-practices/micro-service/service)
-  - [自定义broker](./middle-practices/micro-service/custom-broker)
+  - [*function](./basic-practices/micro-service/function)
+  - [*service](./basic-practices/micro-service/service)
+  - [**自定义broker](./middle-practices/micro-service/custom-broker)
 - [micro-cli](./middle-practices/micro-cli) 如何使用命令行接口
-  - [flag](./middle-practices/micro-cli/flags) 如何使用flag
+  - [**flag](./middle-practices/micro-cli/flags) 如何使用flag
 - [micro-config](./middle-practices/micro-config) 如何从配置中心读取配置
-  - [file](./basic-practices/micro-config) 基于文件配置
-  - [center](./middle-practices/micro-config) 使用配置中心 todo
+  - [*file](./basic-practices/micro-config) 基于文件配置
+  - [**center](./middle-practices/micro-config) 使用配置中心 todo
 
 [golang-cn]: https://golang.google.cn/
 [micro-tutorials]: https://github.com/micro-in-cn/micro-tutorials
