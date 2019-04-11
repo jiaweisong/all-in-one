@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	proto "github.com/micro/examples/service/proto"
+	proto "github.com/micro-in-cn/micro-all-in-one/basic-practices/micro-service/proto"
 	"github.com/micro/go-micro"
 )
 
