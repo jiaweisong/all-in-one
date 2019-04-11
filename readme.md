@@ -37,6 +37,7 @@ $ go get -u github.com/micro/micro
 - [micro-config](./middle-practices/micro-config) 如何从配置中心读取配置
   - [*file](./basic-practices/micro-config) 基于文件配置
   - [**center](./middle-practices/micro-config) 使用配置中心 todo
+- [micro-new](./middle-practices/micro-new) 新建模板
 
 [golang-cn]: https://golang.google.cn/
 [micro-tutorials]: https://github.com/micro-in-cn/micro-tutorials

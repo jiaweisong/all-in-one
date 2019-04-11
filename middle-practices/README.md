@@ -10,6 +10,9 @@
 
 - [micro-cli](./micro-cli) 如何使用命令行接口，包含Flag等
 - [micro-config](./micro-config) 如何从配置中心读取配置
+- [micro-new](./micro-new) 新建模板
+- [micro-service](./micro-service)
+  - [自定义Broker](./micro-service/custom-broker)
 
 
 [文档]: https://micro.mu/docs/cn/
