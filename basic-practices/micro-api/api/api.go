@@ -2,7 +2,8 @@ package main
 
 import (
 	"encoding/json"
-	"log"
+	"github.com/micro/go-log"
+
 	"strings"
 
 	proto "github.com/micro-in-cn/micro-all-in-one/basic-practices/micro-api/api/proto"
@@ -21,7 +22,7 @@ type Foo struct{}
 // 即：/example/call请求会调用go.micro.api.example服务的Example.Call方法
 func (e *Example) Call(ctx context.Context, req *api.Request, rsp *api.Response) error {
 
-	log.Print("Example.Call接口收到请求")
+	log.Logf("Example.Call接口收到请求")
 
 	name, ok := req.Get["name"]
 
