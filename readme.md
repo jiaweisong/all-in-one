@@ -4,6 +4,9 @@
 
 本项目不是教程，只侧重如何使用，需要更深的教程，请翻阅[micro-tutorials][micro-tutorials]
 
+## 讨论
+
+朋友，请加入[Micro中国区](https://micro-services.slack.com/messages/CHE2CSDAB)
 
 ## Micro源码运行环境安装
 
