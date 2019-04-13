@@ -32,7 +32,7 @@ func (e *Example) Call(ctx context.Context, req *api.Request, rsp *api.Response)
 
 	// 打印请求头
 	for k, v := range req.Header {
-		log.Print("请求头信息，", k, " : ", v)
+		log.Logf("请求头信息，", k, " : ", v)
 	}
 
 	rsp.StatusCode = 200
@@ -49,7 +49,7 @@ func (e *Example) Call(ctx context.Context, req *api.Request, rsp *api.Response)
 
 // Bar 方法全称是Foo.Bar，故而它会以/example/foo/bar为路由提供服务
 func (f *Foo) Bar(ctx context.Context, req *api.Request, rsp *api.Response) error {
-	log.Print("Foo.Bar接口收到请求")
+	log.Logf("Foo.Bar接口收到请求")
 
 	if req.Method != "POST" {
 		return errors.BadRequest("go.micro.api.example", "require post")
