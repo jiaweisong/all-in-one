@@ -44,13 +44,13 @@ OPTIONS:
 ### 默认方式创建新服务
 
 ```bash
-micro new github.com/micro-in-cn/micro-all-in-one/middle-practices/micro-new/default
+micro new github.com/micro-in-cn/all-in-one/middle-practices/micro-new/default
 ```
 
 可以看到指令参数只有生成服务代码的路径，路径最后一个单词就是服务项目名，所以，最后一个单词一定<span style="color:red">不要加任何符号！</span>：
 
 ```text
-Creating service go.micro.srv.default in /Users/me/workspace/go/src/github.com/micro-in-cn/micro-all-in-one/middle-practices/micro-new/default
+Creating service go.micro.srv.default in /Users/me/workspace/go/src/github.com/micro-in-cn/all-in-one/middle-practices/micro-new/default
 
 .
 ├── main.go
@@ -75,7 +75,7 @@ go get -u github.com/micro/protoc-gen-micro
 compile the proto file example.proto:
 
 ## 切目录，生成文件
-cd /Users/me/workspace/go/src/github.com/micro-in-cn/micro-all-in-one/middle-practices/micro-new/default
+cd /Users/me/workspace/go/src/github.com/micro-in-cn/all-in-one/middle-practices/micro-new/default
 protoc --proto_path=. --go_out=. --micro_out=. proto/example/example.proto
 ```
 
@@ -99,7 +99,7 @@ func main() {
 现在我们演示使用``--namespace``flag指定自己的命名空间，大家可以根据自己的域名定义合适的空间前缀，我们用micro官网的域名**mu.micro**代替
 
 ```bash
-micro new --namespace=mu.micro github.com/micro-in-cn/micro-all-in-one/middle-practices/micro-new/namespace
+micro new --namespace=mu.micro github.com/micro-in-cn/all-in-one/middle-practices/micro-new/namespace
 ```
 
 生成成功的消息与上面一样，不赘述，我们重点看下服务main方法内容：
@@ -133,7 +133,7 @@ func main() {
 上面两个例子生成的都是默认的服务类型**srv**，现在我们演示指定为**api**类型。
 
 ```bash
-micro new --type=api github.com/micro-in-cn/micro-all-in-one/middle-practices/micro-new/apiType
+micro new --type=api github.com/micro-in-cn/all-in-one/middle-practices/micro-new/apiType
 ```
 
 ```go
@@ -167,7 +167,7 @@ func main() {
 下面我们把服务命名改为**mu.micro.fqdn.more**
 
 ```bash
-micro new --fqdn=mu.micro.fqdn.more github.com/micro-in-cn/micro-all-in-one/middle-practices/micro-new/fqdn
+micro new --fqdn=mu.micro.fqdn.more github.com/micro-in-cn/all-in-one/middle-practices/micro-new/fqdn
 ```
 
 ```go
@@ -201,7 +201,7 @@ func main() {
 前面有提到路径最后一个单词就是服务项目名，或叫服务名。有时候我们不想让目录这个单词变成我们的服务名，比如下面的**micro**，我们想换成**orcim**，那我们就可以传入`--alias`指令。
 
 ```bash
-micro new --alias=orcim github.com/micro-in-cn/micro-all-in-one/middle-practices/micro-new/micro
+micro new --alias=orcim github.com/micro-in-cn/all-in-one/middle-practices/micro-new/micro
 ```
 
 ```go
@@ -234,7 +234,7 @@ func main() {
 我们演示使用**etcd**插件和**kafka**插件
 
 ```bash
-micro new --plugin=registry=etcd:broker=kafka github.com/micro-in-cn/micro-all-in-one/middle-practices/micro-new/plugin
+micro new --plugin=registry=etcd:broker=kafka github.com/micro-in-cn/all-in-one/middle-practices/micro-new/plugin
 ```
 
 ```go

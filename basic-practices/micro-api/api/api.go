@@ -6,7 +6,7 @@ import (
 
 	"strings"
 
-	proto "github.com/micro-in-cn/micro-all-in-one/basic-practices/micro-api/api/proto"
+	proto "github.com/micro-in-cn/all-in-one/basic-practices/micro-api/api/proto"
 	api "github.com/micro/go-api/proto"
 	"github.com/micro/go-micro"
 	"github.com/micro/go-micro/errors"

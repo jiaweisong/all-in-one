@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	proto "github.com/micro-in-cn/micro-all-in-one/basic-practices/micro-api/rpc/proto"
+	proto "github.com/micro-in-cn/all-in-one/basic-practices/micro-api/rpc/proto"
 	"github.com/micro/go-api"
 	rapi "github.com/micro/go-api/handler/api"
 	"github.com/micro/go-api/handler/rpc"
