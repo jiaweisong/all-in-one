@@ -19,5 +19,6 @@ go run main.go
 ```
 
 [go-config]: https://micro.mu/docs/cn/go-config.html
-[middle-micro-config]: ../../middle-pratices/micro-config
+[middle-micro-config]: ../../middle-practices/micro-config
 
+c
