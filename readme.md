@@ -41,6 +41,8 @@ $ go get -u github.com/micro/micro
   - [*file](./basic-practices/micro-config) 基于文件配置
   - [**center](./middle-practices/micro-config) 使用配置中心 todo
 - [**micro-new](./middle-practices/micro-new) 新建模板
+- [**micro-wrapper](./middle-practices/micro-wrapper) 
+  - [**基础用法](./middle-practices/micro-wrapper/basic)
 
 [golang-cn]: https://golang.google.cn/
 [tutorials]: https://github.com/micro-in-cn/tutorials
