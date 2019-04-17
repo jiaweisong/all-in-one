@@ -6,7 +6,7 @@
 
 ## 讨论
 
-朋友，请加入[Micro中国区](https://micro-services.slack.com/messages/CHE2CSDAB)
+朋友，请加入[slack](http://slack.micro.mu/)，进入**中国区**Channel沟通。
 
 ## Micro源码运行环境安装
 
