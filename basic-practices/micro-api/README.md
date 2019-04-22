@@ -37,23 +37,23 @@ Micro API目前有5种处理方式，下面我们会讲到，我们可以根据�
 
 Micro内部有将http请求路径映射到服务的机制，映射规则可以通过下表介绍
 
-http路径	|	后台服务	|	接口方法
-----	|	----	|	----
-/foo/bar	|	go.micro.api.foo	|	Foo.Bar
-/foo/bar/baz	|	go.micro.api.foo	|	Bar.Baz
-/foo/bar/baz/cat	|	go.micro.api.foo.bar	|	Baz.Cat
+http路径    |    后台服务    |    接口方法
+----    |    ----    |    ----
+/foo/bar    |    go.micro.api.foo    |    Foo.Bar
+/foo/bar/baz    |    go.micro.api.foo    |    Bar.Baz
+/foo/bar/baz/cat    |    go.micro.api.foo.bar    |    Baz.Cat
 
 默认的命名空间是**go.micro.api**，上面说过可以通过`--namespace`指令自定义。
 
 而有些带版本号的路径，也可以映射到服务名上
 
-请求路径	|	后台服务	|	接口方法
-----	|	----	|	----
-/foo/bar	|	go.micro.api.foo	|	Foo.Bar
-/v1/foo/bar	|	go.micro.api.v1.foo	|	Foo.Bar
-/v1/foo/bar/baz	|	go.micro.api.v1.foo	|	Bar.Baz
-/v2/foo/bar	|	go.micro.api.v2.foo	|	Foo.Bar
-/v2/foo/bar/baz	|	go.micro.api.v2.foo	|	Bar.Baz
+请求路径    |    后台服务    |    接口方法
+----    |    ----    |    ----
+/foo/bar    |    go.micro.api.foo    |    Foo.Bar
+/v1/foo/bar    |    go.micro.api.v1.foo    |    Foo.Bar
+/v1/foo/bar/baz    |    go.micro.api.v1.foo    |    Bar.Baz
+/v2/foo/bar    |    go.micro.api.v2.foo    |    Foo.Bar
+/v2/foo/bar/baz    |    go.micro.api.v2.foo    |    Bar.Baz
 
 从上面的映射规则中可以看出，**RPC/API**模式下，路径后面的两个参数会被组合成Golang公共方法路径名，而剩下的会加上命名空间前缀组成服务名。比如：
 
@@ -66,10 +66,10 @@ http路径	|	后台服务	|	接口方法
 
 比如：
 
-请求路径	|	服务	|	后台服务路径
----	|	---	|	---
-/greeter	|	go.micro.api.greeter	|	/greeter
-/greeter/:name	|	go.micro.api.greeter	|	/greeter/:name
+请求路径    |    服务    |    后台服务路径
+---    |    ---    |    ---
+/greeter    |    go.micro.api.greeter    |    /greeter
+/greeter/:name    |    go.micro.api.greeter    |    /greeter/:name
 
 ### Event类型
 
@@ -77,9 +77,9 @@ http路径	|	后台服务	|	接口方法
 
 比如（命名空间设置为go.micro.evt）：
 
-请求路径	|	服务	|	方法
----	|	---	|	---
-/user/login	|	go.micro.evt.user	|	侦听器对象（示例中的new(Event)）所有公共方法，且方法要有ctx和事件参数
+请求路径    |    服务    |    方法
+---    |    ---    |    ---
+/user/login    |    go.micro.evt.user    |    侦听器对象（示例中的new(Event)）所有公共方法，且方法要有ctx和事件参数
 
 ## 示例源码
 

@@ -85,11 +85,11 @@ protoc --proto_path=. --go_out=. --micro_out=. proto/example/example.proto
 package main
 // ...
 func main() {
-	// New Service
-	service := micro.NewService(
-		micro.Name("go.micro.srv.default"),
-		micro.Version("latest"),
-	)
+    // New Service
+    service := micro.NewService(
+        micro.Name("go.micro.srv.default"),
+        micro.Version("latest"),
+    )
     // ...
 }
 ```
@@ -110,19 +110,19 @@ package main
 // ...
 
 func main() {
-	// New Service
-	service := micro.NewService(
-		micro.Name("mu.micro.srv.namespace"),
-		micro.Version("latest"),
-	)
+    // New Service
+    service := micro.NewService(
+        micro.Name("mu.micro.srv.namespace"),
+        micro.Version("latest"),
+    )
 
-	// ...
-	micro.RegisterSubscriber("mu.micro.srv.namespace", service.Server(), new(subscriber.Example))
+    // ...
+    micro.RegisterSubscriber("mu.micro.srv.namespace", service.Server(), new(subscriber.Example))
 
-	// Register Function as Subscriber
-	micro.RegisterSubscriber("mu.micro.srv.namespace", service.Server(), subscriber.Handler)
+    // Register Function as Subscriber
+    micro.RegisterSubscriber("mu.micro.srv.namespace", service.Server(), subscriber.Handler)
 
-	// ...
+    // ...
 }
 ```
 
@@ -142,19 +142,19 @@ package main
 // ...
 
 func main() {
-	// New Service
-	service := micro.NewService(
-		micro.Name("go.micro.api.apiType"),
-		micro.Version("latest"),
-	)
+    // New Service
+    service := micro.NewService(
+        micro.Name("go.micro.api.apiType"),
+        micro.Version("latest"),
+    )
 
-	// Initialise service
-	service.Init(
-		// create wrap for the Example srv client
-		micro.WrapHandler(client.ExampleWrapper(service)),
-	)
+    // Initialise service
+    service.Init(
+        // create wrap for the Example srv client
+        micro.WrapHandler(client.ExampleWrapper(service)),
+    )
 
-	// ...
+    // ...
 }
 ```
 
@@ -176,21 +176,21 @@ package main
 // ...
 
 func main() {
-	// New Service
-	service := micro.NewService(
-		micro.Name("mu.micro.fqdn.more"),
-		micro.Version("latest"),
-	)
+    // New Service
+    service := micro.NewService(
+        micro.Name("mu.micro.fqdn.more"),
+        micro.Version("latest"),
+    )
 
-	// ..
-	
-	// Register Struct as Subscriber
-	micro.RegisterSubscriber("mu.micro.fqdn.more", service.Server(), new(subscriber.Example))
+    // ..
+    
+    // Register Struct as Subscriber
+    micro.RegisterSubscriber("mu.micro.fqdn.more", service.Server(), new(subscriber.Example))
 
-	// Register Function as Subscriber
-	micro.RegisterSubscriber("mu.micro.fqdn.more", service.Server(), subscriber.Handler)
+    // Register Function as Subscriber
+    micro.RegisterSubscriber("mu.micro.fqdn.more", service.Server(), subscriber.Handler)
 
-	// ...
+    // ...
 }
 ```
 
@@ -210,20 +210,20 @@ package main
 // ...
 
 func main() {
-	// New Service
-	service := micro.NewService(
-		micro.Name("go.micro.srv.orcim"),
-		micro.Version("latest"),
-	)
+    // New Service
+    service := micro.NewService(
+        micro.Name("go.micro.srv.orcim"),
+        micro.Version("latest"),
+    )
 
-	// ...
-	// Register Struct as Subscriber
-	micro.RegisterSubscriber("go.micro.srv.orcim", service.Server(), new(subscriber.Example))
+    // ...
+    // Register Struct as Subscriber
+    micro.RegisterSubscriber("go.micro.srv.orcim", service.Server(), new(subscriber.Example))
 
-	// Register Function as Subscriber
-	micro.RegisterSubscriber("go.micro.srv.orcim", service.Server(), subscriber.Handler)
+    // Register Function as Subscriber
+    micro.RegisterSubscriber("go.micro.srv.orcim", service.Server(), subscriber.Handler)
 
-	// ...
+    // ...
 }
 ```
 
@@ -241,8 +241,8 @@ micro new --plugin=registry=etcd:broker=kafka github.com/micro-in-cn/all-in-one/
 package main
 
 import (
-	_ "github.com/micro/go-plugins/registry/etcd"
-	_ "github.com/micro/go-plugins/broker/kafka"
+    _ "github.com/micro/go-plugins/registry/etcd"
+    _ "github.com/micro/go-plugins/broker/kafka"
 )
 ```
 

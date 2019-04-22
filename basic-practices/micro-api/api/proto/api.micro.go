@@ -5,7 +5,7 @@
 Package api is a generated protocol buffer package.
 
 It is generated from these files:
-	github.com/micro/examples/api/api/proto/api.proto
+    github.com/micro/examples/api/api/proto/api.proto
 
 It has these top-level messages:
 */

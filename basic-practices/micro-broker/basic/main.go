@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	topic = "go.micro.topic.foo"
+	topic = "mu.micro.book.topic.payment.done"
 )
 
 func pub() {
@@ -32,16 +32,6 @@ func pub() {
 	}
 }
 
-func sub() {
-	_, err := broker.Subscribe(topic, func(p broker.Publication) error {
-		fmt.Println("[sub] 订阅收到消息：", string(p.Message().Body), "header", p.Message().Header)
-		return nil
-	})
-	if err != nil {
-		fmt.Println(err)
-	}
-}
-
 func main() {
 	cmd.Init()
 
@@ -53,7 +43,7 @@ func main() {
 	}
 
 	go pub()
-	go sub()
+	//  go sub()
 
 	<-time.After(time.Second * 10)
 }

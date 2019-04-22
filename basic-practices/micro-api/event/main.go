@@ -25,8 +25,8 @@ func (e *Event) Process2(ctx context.Context, event *proto.Event) error {
 
 /** 打开本注释后，会导致侦听器无法工作
 func (e *Event) Process3() error {
-	log.Log("公有方法Process3 收到事件3，不解析参数")
-	return nil
+    log.Log("公有方法Process3 收到事件3，不解析参数")
+    return nil
 }**/
 
 func (e *Event) process(ctx context.Context, event *proto.Event) error {
