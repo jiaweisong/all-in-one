@@ -37,9 +37,18 @@ $ go get -u github.com/micro/micro
   - [**自定义broker](./middle-practices/micro-service/custom-broker)
 - [micro-cli](./middle-practices/micro-cli) 如何使用命令行接口
   - [**flag](./middle-practices/micro-cli/flags) 如何使用flag
-- [micro-config](./middle-practices/micro-config) 如何从配置中心读取配置
-  - [*file](./basic-practices/micro-config) 基于文件配置
-  - [**center](./middle-practices/micro-config) 使用配置中心 todo
+- micro-config 如何读取配置
+  - local  本地
+    - [*file](./basic-practices/micro-config) 基于文件配置
+    - [**env](./basic-practices/micro-config) 使用环境变量配置
+    - [**flag](./basic-practices/micro-config) 使用命令行参数配置
+    - [**memory](./basic-practices/micro-config) 使用环境变量配置
+    - [**microcli](./basic-practices/micro-config) 使用MicroCli指令参数配置
+  - [***center](./senior-practices/micro-config) 使用配置中心 todo
+    - [***consul](./senior-practices/micro-config/consul) 使用consul作为配置中心 todo
+    - [***etcd](./senior-practices/micro-config/etcd) 使用etcd作为配置中心 todo
+    - [***gRPC](./senior-practices/micro-config/gRPC) 使用gRPC作为配置中心 todo
+    - [***k8s](./senior-practices/micro-config/k8s) 使用k8s作为配置中心 todo
 - [**micro-new](./middle-practices/micro-new) 新建模板
 - [**micro-wrapper](./middle-practices/micro-wrapper) 
   - [**基础用法](./middle-practices/micro-wrapper/basic)
