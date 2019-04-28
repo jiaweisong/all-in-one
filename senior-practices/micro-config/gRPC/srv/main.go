@@ -18,7 +18,7 @@ import (
 var (
 	mux        sync.RWMutex
 	configMaps = make(map[string]*proto.ChangeSet)
-	apps       = []string{"micro", "other"}
+	apps       = []string{"micro", "extra"}
 )
 
 type Service struct{}

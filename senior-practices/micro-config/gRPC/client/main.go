@@ -1,11 +1,21 @@
 package main
 
 import (
-	"github.com/micro-in-cn/all-in-one/senior-practices/micro-config/gRPC/structs"
 	"github.com/micro/go-config"
 	grpcConfig "github.com/micro/go-config/source/grpc"
 	"github.com/micro/go-log"
 )
+
+type Micro struct {
+	Info
+}
+
+type Info struct {
+	Name    string `json:"name,omitempty"`
+	Version string `json:"version,omitempty"`
+	Message string `json:"message,omitempty"`
+	Age     int    `json:"age,omitempty"`
+}
 
 func main() {
 
@@ -23,7 +33,7 @@ func main() {
 	}
 
 	// 渲染配置到指定结构
-	configs := &structs.Micro{}
+	configs := &Micro{}
 	err = conf.Scan(configs)
 	if err != nil {
 		log.Fatal(err)
