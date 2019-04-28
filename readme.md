@@ -47,7 +47,7 @@ $ go get -u github.com/micro/micro
   - [***center](./senior-practices/micro-config) 使用配置中心 todo
     - [***consul](./senior-practices/micro-config/consul) 使用consul作为配置中心 todo
     - [***etcd](./senior-practices/micro-config/etcd) 使用etcd作为配置中心 todo
-    - [***gRPC](./senior-practices/micro-config/gRPC) 使用gRPC作为配置中心 todo
+    - [***gRPC](./senior-practices/micro-config/gRPC) 使用gRPC作为配置中心
     - [***k8s](./senior-practices/micro-config/k8s) 使用k8s作为配置中心 todo
 - [**micro-new](./middle-practices/micro-new) 新建模板
 - [**micro-wrapper](./middle-practices/micro-wrapper) 

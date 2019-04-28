@@ -25,21 +25,22 @@ type Service struct{}
 
 func main() {
 
-	// load config files
+	// 加载配置文件
 	err := loadConfigFile()
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	// new service
+	// 新建grpc Server服务
 	service := grpc2.NewServer()
 	proto.RegisterSourceServer(service, new(Service))
 	ts, err := net.Listen("tcp", ":8600")
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	log.Logf("configServer started")
+
+	// 启动
 	err = service.Serve(ts)
 	if err != nil {
 		log.Fatal(err)
@@ -88,7 +89,7 @@ func loadConfigFile() (err error) {
 		}
 	}
 
-	// watch changes
+	// 侦听变动
 	watcher, err := config.Watch()
 	if err != nil {
 		log.Fatalf("[loadConfigFile] start watching files error，%s", err)
