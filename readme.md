@@ -52,6 +52,8 @@ $ go get -u github.com/micro/micro
 - [**micro-new](./middle-practices/micro-new) 新建模板
 - [**micro-wrapper](./middle-practices/micro-wrapper) 
   - [**基础用法](./middle-practices/micro-wrapper/basic)
+- grpc
+  - [**grpc-oneof**](./middle-practices/grpc-oneof) grpc oneOf 示例
 
 [golang-cn]: https://golang.google.cn/
 [tutorials]: https://github.com/micro-in-cn/tutorials
