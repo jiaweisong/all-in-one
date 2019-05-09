@@ -53,7 +53,7 @@ $ go get -u github.com/micro/micro
 - [**micro-wrapper](./middle-practices/micro-wrapper) 
   - [**基础用法](./middle-practices/micro-wrapper/basic)
 - grpc
-  - [**grpc-oneof**](./middle-practices/grpc-oneof) grpc oneOf 示例
+  - [**grpc-oneof**](./middle-practices/grpc-oneof) grpc oneOf 示例todo
 
 [golang-cn]: https://golang.google.cn/
 [tutorials]: https://github.com/micro-in-cn/tutorials
