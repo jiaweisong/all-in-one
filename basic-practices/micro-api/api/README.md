@@ -1,4 +1,4 @@
-# API
+## API
 
 本示例介绍使用**Micro API**（以下简称**API**）中的请求处理类型**api**，这里后面的api意思不是Micro API工具，而是指具体的对外的API接口服务。
 

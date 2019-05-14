@@ -2,14 +2,12 @@ package main
 
 import (
 	"encoding/json"
-	"github.com/micro/go-log"
-
-	"strings"
-
 	proto "github.com/micro-in-cn/all-in-one/basic-practices/micro-api/api/proto"
 	api "github.com/micro/go-api/proto"
+	"github.com/micro/go-log"
 	"github.com/micro/go-micro"
 	"github.com/micro/go-micro/errors"
+	"strings"
 
 	"context"
 )
