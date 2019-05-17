@@ -35,6 +35,7 @@ $ go get -u github.com/micro/micro
   - [*function](./basic-practices/micro-service/function)
   - [*service](./basic-practices/micro-service/service)
   - [**自定义broker](./middle-practices/micro-service/custom-broker)
+  - [**关闭应用](./middle-practices/micro-service/shutdown)
 - [micro-cli](./middle-practices/micro-cli) 如何使用命令行接口
   - [**flag](./middle-practices/micro-cli/flags) 如何使用flag
 - micro-config 如何读取配置

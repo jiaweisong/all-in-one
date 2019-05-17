@@ -13,6 +13,7 @@
 - [micro-new](./micro-new) 新建模板
 - [micro-service](./micro-service)
   - [自定义Broker](./micro-service/custom-broker)
+  - [关闭应用](./micro-service/shutdown)
 
 
 [文档]: https://micro.mu/docs/cn/
