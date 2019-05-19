@@ -21,7 +21,7 @@ func main() {
 
 	// 声明使用grpc配置中心
 	source := grpcConfig.NewSource(
-		grpcConfig.WithAddress("127.0.0.1:8600"),
+		grpcConfig.WithAddress("127.0.0.1:9600"),
 		grpcConfig.WithPath("/micro"),
 	)
 	conf := config.NewConfig()
