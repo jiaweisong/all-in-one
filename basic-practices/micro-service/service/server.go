@@ -24,7 +24,8 @@ func main() {
 			"type": "你好，世界",
 		}),
 	)
-
+	service.Init()
+	
 	// 注册服务
 	proto.RegisterGreeterHandler(service.Server(), new(Greeter))
 
